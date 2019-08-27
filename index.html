@@ -2,69 +2,87 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>prueba animación</title>
+	<title>ejemplo</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.proyecto{
+			background-image: url(https://www.medicalnewstoday.com/content//images/articles/322/322868/golden-retriever-puppy.jpg);
+			height: 300px;
+			width: 300px;
+			background-position: center;
+			background-size: cover;
+		}
+		.bg-white{
+			opacity: 0;
+			transition: .3s;
+			background-color:rgba(255,255,255,0.3);
+			height: 100%;
+			width: 100%;
+			position: relative;
+		}
+		.title{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 40px;
 
-  <style>
-	.trabajo{
-		height: 500px;
-		width: 500px;
-		background-image: url(realistic-galaxy-background_52683-12122.jpg);
-		display: inline-block;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		position: relative;
-	}
-	.bg-white{
-		position: absolute;
-		opacity: 0;
-		transition: .3s;
-		background-color:rgba(255,255,255,0.3);
-		height: 100%;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.bg-white:hover{
-		opacity: 1;
-		transition: .5s;
-	}
-	.trans{
-		transition: .7s;
-	}
-	.margintop{
-		margin-top: -300px;
-	}
-	.marginbottom{
-		margin-bottom: -300px;
-	}
+		}
+		.button{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 40px;
+		}
+		.margintop{
+			margin-top: -150px;
+		}
+		.marginbottom{
+			margin-bottom: -150px;
+		}
+		.bg-white:hover{
+			transition: .3s;
+			opacity: 1;
+		}
+		.trans{
+			transition: .7s;
+		}
 
-
-</style>
+	</style>
 
 </head>
-
 <body>
-	<div class="trabajo">
+
+	<div class="proyecto">
 		<div class="bg-white">
-			<h1 class=" trans margintop">trabajo1</h1>
-			<h2 class=" trans marginbottom">trabajooo!</h2>
+			<div class="trans title margintop">
+				<h1>Retriever</h1>
+			</div>
+			<div class=" button ">
+				<button class="trans marginbottom">ver más</button>
+			</div>
+			
 		</div>
 	</div>
 
-
-<script
+	<script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-<script>
-	$('.trabajo').hover(function(){
-			$(".bg-white h1").toggleClass("margintop");
-			$(".bg-white h2").toggleClass("marginbottom");
-	});
-</script>
+  	<script>
+		$('.proyecto').hover(function(){
+			$(".title").toggleClass("margintop");
+			$(".button button").toggleClass("marginbottom");
+		});
+	</script>
+	
 </body>
 </html>
-
-
